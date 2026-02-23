@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacific Counseling PLLC | Mental Health Therapist in New Hampshire | Nataliya Allen, LMHC</title>
+  <meta name="description" content="Licensed mental health counseling in New Hampshire for teens, adults, and families. Nataliya Allen, LMHC offers compassionate, trauma-informed therapy for anxiety, ADHD, depression, trauma, and emotional regulation. Serving the greater NH area." />
+  <meta name="keywords" content="mental health counselor New Hampshire, therapist NH, anxiety therapy New Hampshire, ADHD counseling NH, trauma therapy New Hampshire, teen therapist NH, couples counseling NH, LMHC New Hampshire, depression treatment NH, trauma-informed therapy New Hampshire, neurodiversity affirming therapist NH, Pacific Counseling PLLC" />
+  <link rel="canonical" href="https://pacificcounselingpllc.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="geo.region" content="US-NH" />
+  <meta name="geo.placename" content="New Hampshire" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pacific Counseling PLLC" />
+  <meta property="og:title" content="Pacific Counseling PLLC | Compassionate Mental Health Counseling in New Hampshire" />
+  <meta property="og:description" content="Licensed mental health counseling for teens, adults, and families in New Hampshire. Nataliya Allen, LMHC specializes in anxiety, ADHD, trauma, depression, and more. Neurodiversity-affirming and trauma-informed care." />
+  <meta property="og:url" content="https://pacificcounselingpllc.com/" />
+  <meta property="og:image" content="https://pacificcounselingpllc.com/assets/logo-name-motto-vertical.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pacific Counseling PLLC | Mental Health Counseling in NH" />
+  <meta name="twitter:description" content="Compassionate, trauma-informed counseling for teens, adults & families in New Hampshire. Anxiety, ADHD, trauma, depression, and more." />
+  <meta name="twitter:image" content="https://pacificcounselingpllc.com/assets/logo-name-motto-vertical.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://pacificcounselingpllc.com/#business",
+    "name": "Pacific Counseling PLLC",
+    "alternateName": "Pacific Counseling",
+    "description": "Compassionate, trauma-informed mental health counseling for teens, adults, and families in New Hampshire. Specializing in anxiety, ADHD, trauma, depression, emotional regulation, and neurodiversity-affirming care.",
+    "url": "https://pacificcounselingpllc.com",
+    "telephone": "+1-603-552-7053",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "NH",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "New Hampshire"
+    },
+    "knowsAbout": [
+      "Anxiety Therapy",
+      "ADHD Counseling",
+      "Trauma Therapy",
+      "Depression Treatment",
+      "Teen Mental Health",
+      "Couples Counseling",
+      "Cognitive Behavioral Therapy",
+      "Mindfulness-Based Therapy",
+      "Neurodiversity-Affirming Care"
+    ],
+    "employee": {
+      "@type": "Person",
+      "name": "Nataliya Allen",
+      "jobTitle": "Licensed Mental Health Counselor",
+      "hasCredential": "LMHC"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Counseling Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Individual Therapy Session" },
+          "price": "150",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Couples Therapy Session" },
+          "price": "200",
+          "priceCurrency": "USD"
+        }
+      ]
+    },
+    "paymentAccepted": "Visa, Mastercard, American Express, Discover",
+    "currenciesAccepted": "USD"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="module">
+    import { h, render } from 'https://esm.sh/preact@10';
+    import { useState, useEffect } from 'https://esm.sh/preact@10/hooks';
+    import htm from 'https://esm.sh/htm@3';
+    const html = htm.bind(h);
+
+    /* ── email (assembled on load — no literal @ in source to defeat scrapers) ── */
+    const EMAIL = 'nataliyaallen' + '\u0040' + 'pacificcounselingpllc.com';
+    function mailTo(subject) {
+      return 'mailto:' + EMAIL + (subject ? '?subject=' + encodeURIComponent(subject) : '');
+    }
+
+    /* ── helpers ── */
+    function scrollTo(id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ── scroll reveal ── */
+    function useReveal() {
+      useEffect(() => {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        return () => io.disconnect();
+      }, []);
+    }
+
+    /* ── NAV ── */
+    function Nav({ scrolled }) {
+      return html`
+        <nav class=${'nav' + (scrolled ? ' scrolled' : '')}>
+          <div class="nav-logo">
+            <img src="assets/logo-name-motto-horizontal.png" alt="Pacific Counseling" />
+          </div>
+          <ul class="nav-links">
+            <li><button onClick=${() => scrollTo('about')}>About</button></li>
+            <li><button onClick=${() => scrollTo('specialties')}>Specialties</button></li>
+            <li><button onClick=${() => scrollTo('approach')}>Approach</button></li>
+            <li><button onClick=${() => scrollTo('fees')}>Fees</button></li>
+            <li><button class="nav-cta" onClick=${() => scrollTo('contact')}>Contact</button></li>
+          </ul>
+        </nav>
+      `;
+    }
+
+    /* ── PARTICLES ── */
+    const PARTICLES = [
+      { x:'6%',  dur:11, del:0,   dx:'55px',  s:8,  c:'rgba(224,112,80,0.55)' },
+      { x:'13%', dur:13, del:2,   dx:'-42px', s:6,  c:'rgba(232,144,106,0.5)' },
+      { x:'21%', dur:9,  del:4,   dx:'75px',  s:10, c:'rgba(72,188,197,0.45)' },
+      { x:'29%', dur:14, del:1,   dx:'-50px', s:7,  c:'rgba(255,255,255,0.38)'},
+      { x:'38%', dur:10, del:5.5, dx:'48px',  s:9,  c:'rgba(224,112,80,0.40)' },
+      { x:'47%', dur:12, del:3,   dx:'-65px', s:6,  c:'rgba(255,255,255,0.32)'},
+      { x:'55%', dur:8,  del:7,   dx:'52px',  s:8,  c:'rgba(232,144,106,0.45)'},
+      { x:'63%', dur:15, del:0.5, dx:'-32px', s:11, c:'rgba(72,188,197,0.38)' },
+      { x:'71%', dur:11, del:6,   dx:'60px',  s:7,  c:'rgba(224,112,80,0.50)' },
+      { x:'79%', dur:13, del:2.5, dx:'-48px', s:9,  c:'rgba(255,255,255,0.28)'},
+      { x:'87%', dur:10, del:8,   dx:'38px',  s:6,  c:'rgba(232,144,106,0.40)'},
+      { x:'94%', dur:12, del:1.5, dx:'-58px', s:10, c:'rgba(72,188,197,0.32)' },
+      { x:'4%',  dur:9,  del:9,   dx:'68px',  s:7,  c:'rgba(224,112,80,0.42)' },
+      { x:'34%', dur:14, del:3.5, dx:'-44px', s:8,  c:'rgba(255,255,255,0.34)'},
+      { x:'74%', dur:11, del:6.5, dx:'50px',  s:6,  c:'rgba(232,144,106,0.48)'},
+      { x:'17%', dur:16, del:4.5, dx:'-38px', s:9,  c:'rgba(224,112,80,0.36)' },
+      { x:'58%', dur:10, del:11,  dx:'42px',  s:7,  c:'rgba(72,188,197,0.42)' },
+    ];
+
+    function Particles() {
+      return html`
+        <div class="hero-particles">
+          ${PARTICLES.map((p, i) => html`
+            <div key=${i} class="particle" style=${{
+              '--x': p.x, '--dur': p.dur+'s', '--del': p.del+'s',
+              '--dx': p.dx, '--s': p.s+'px', '--c': p.c
+            }} />
+          `)}
+        </div>
+      `;
+    }
+
+    /* ── HERO ── */
+    function Hero() {
+      return html`
+        <section class="hero" id="hero">
+          <${Particles} />
+
+          <div class="hero-content">
+            <div class="hero-logo-card">
+              <img src="assets/logo-name-motto-horizontal.png" alt="Pacific Counseling PLLC — Mental Health Counseling in New Hampshire" />
+            </div>
+            <p class="hero-tagline">
+              A warm, supportive space for healing, growth, and resilience
+            </p>
+            <p class="hero-sub">Serving teens, adults & families across New Hampshire</p>
+            <div class="hero-actions">
+              <a href=${mailTo('New Patient Inquiry')} class="btn btn-primary">
+                Book a Consultation
+              </a>
+              <button class="btn btn-ghost" onClick=${() => scrollTo('about')}>
+                Meet Nataliya ↓
+              </button>
+            </div>
+          </div>
+
+          <button class="scroll-mouse" onClick=${() => scrollTo('about')} aria-label="Scroll down">
+            <span></span>
+          </button>
+
+          <div class="hero-waves">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 24 150 28"
+                 preserveAspectRatio="none"
+                 shape-rendering="auto"
+                 style="height:90px;">
+              <defs>
+                <path id="wave-path"
+                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+              </defs>
+              <g class="parallax-waves">
+                <use href="#wave-path" x="48" y="0"  fill="rgba(254,249,244,0.45)" />
+                <use href="#wave-path" x="48" y="3"  fill="rgba(254,249,244,0.38)" />
+                <use href="#wave-path" x="48" y="5"  fill="rgba(254,249,244,0.28)" />
+                <use href="#wave-path" x="48" y="7"  fill="#fef9f4" />
+              </g>
+            </svg>
+          </div>
+        </section>
+      `;
+    }
+
+    /* ── ABOUT ── */
+    function About() {
+      return html`
+        <section class="about" id="about">
+          <div class="container">
+            <div class="about-grid">
+
+              <div class="reveal">
+                <div class="title-bar"></div>
+                <h2 class="section-title">About Nataliya</h2>
+                <p class="section-sub">Licensed Mental Health Counselor</p>
+
+                <div class="about-text">
+                  <p>Hi, I'm Nataliya. I'm a licensed mental health counselor passionate about helping teens, adults and families navigate life's challenges with greater confidence and resilience.</p>
+                  <p>My work focuses on supporting clients experiencing anxiety, trauma, emotional regulation difficulties, ADHD, and autism-related challenges. I take a compassionate, neurodiversity-affirming, and trauma-informed approach, meeting each client where they are and moving at a pace that feels safe and respectful.</p>
+                  <p>I integrate person-centered therapy, trauma-focused cognitive behavioral strategies, and mindfulness-based techniques to help clients build insight, strengthen coping skills, and reconnect with their inner strengths. I believe healing happens in a supportive relationship where you feel heard, understood, and empowered.</p>
+                  <p>Whether you're seeking support for your child, your family, or yourself, my goal is to help you move from surviving to truly thriving.</p>
+                </div>
+
+                <div class="quotes">
+                  <div class="quote-card">
+                    <blockquote>"The curious paradox is that when I accept myself just as I am, then I can change."</blockquote>
+                    <cite>— Carl Rogers</cite>
+                  </div>
+                  <div class="quote-card">
+                    <blockquote>"If you're going through hell, keep going."</blockquote>
+                    <cite>— Winston S. Churchill</cite>
+                  </div>
+                </div>
+              </div>
+
+              <div class="about-photo-col reveal d2">
+                <div class="photo-wrap">
+                  <div class="photo-ring"></div>
+                  <div class="photo-ring-2"></div>
+                  <img src="assets/profile_photo.JPG"
+                       alt="Nataliya Allen, Licensed Mental Health Counselor"
+                       class="profile-img" />
+                  <div class="photo-blob"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    /* ── SPECIALTIES ── */
+    const CONDITIONS = [
+      'Anxiety','ADHD','Trauma','Depression',
+      'Emotional Disturbance','Behavioral Issues','Mood Disorders',
+      'Impulse Control Disorders','Life Transitions',
+      'Oppositional Defiance (ODD)','Parenting','Peer Relationships',
+    ];
+    const ALSO = ['Coping Skills','Self Esteem','Relationship Issues'];
+
+    function Specialties() {
+      return html`
+        <section class="specialties" id="specialties">
+          <div class="container">
+            <div class="text-center reveal">
+              <div class="title-bar" style="margin:0 auto 1rem;"></div>
+              <h2 class="section-title">Specialties & Expertise</h2>
+              <p class="section-sub">Areas where focused experience makes a difference</p>
+            </div>
+
+            <div class="spec-grid">
+              <div class="spec-col reveal d1">
+                <h3>Conditions & Challenges</h3>
+                <div class="badges">
+                  ${CONDITIONS.map(s => html`<span class="badge badge-teal" key=${s}>${s}</span>`)}
+                </div>
+                <div style="margin-top:1.8rem;">
+                  <h3>Also Supporting</h3>
+                  <div class="badges">
+                    ${ALSO.map(s => html`<span class="badge badge-coral" key=${s}>${s}</span>`)}
+                  </div>
+                </div>
+              </div>
+
+              <div class="spec-col reveal d2">
+                <div class="who-card">
+                  <h3>Who I Work With</h3>
+                  <div class="badges">
+                    ${['Teens','Adults','Families'].map(s => html`<span class="badge badge-green" key=${s}>${s}</span>`)}
+                  </div>
+                  <p>Whether you're seeking support for your child, your family, or yourself — everyone deserves a space to feel heard, understood, and empowered on their journey toward healing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    /* ── APPROACH ── */
+    const THERAPIES = [
+      { icon:'🧠', name:'Cognitive Behavioral (CBT)' },
+      { icon:'🌍', name:'Culturally Sensitive' },
+      { icon:'🧘', name:'Mindfulness-Based (MBCT)' },
+      { icon:'💬', name:'Motivational Interviewing' },
+      { icon:'🌱', name:'Person-Centered' },
+      { icon:'💪', name:'Strength-Based' },
+      { icon:'🛡️', name:'Trauma Focused' },
+    ];
+
+    function Approach() {
+      return html`
+        <section class="approach" id="approach">
+          <div class="container">
+            <div class="text-center reveal">
+              <div class="title-bar" style="margin:0 auto 1rem;"></div>
+              <h2 class="section-title">Treatment Approach</h2>
+              <p class="section-sub">Evidence-based modalities tailored to your unique needs</p>
+            </div>
+            <div class="approach-cards reveal">
+              ${THERAPIES.map(t => html`
+                <div class="approach-card" key=${t.name}>
+                  <div class="approach-icon">${t.icon}</div>
+                  <h4>${t.name}</h4>
+                </div>
+              `)}
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    /* ── FEES ── */
+    function Fees() {
+      return html`
+        <section class="fees" id="fees">
+          <div class="container">
+            <div class="text-center reveal">
+              <div class="title-bar" style="margin:0 auto 1rem;"></div>
+              <h2 class="section-title">Fees & Insurance</h2>
+              <p class="section-sub">Transparent pricing with multiple payment options</p>
+            </div>
+
+            <div class="fees-grid reveal">
+              <div class="fee-card">
+                <h3>Individual Session</h3>
+                <div class="fee-price">$150</div>
+                <div class="fee-period">per session</div>
+                <a href=${mailTo('Individual Session Inquiry')} class="btn btn-teal" style="font-size:0.9rem;padding:0.6rem 1.4rem;">
+                  Schedule
+                </a>
+              </div>
+
+              <div class="fee-card highlight">
+                <h3>Couples Session</h3>
+                <div class="fee-price">$200</div>
+                <div class="fee-period">per session</div>
+                <a href=${mailTo('Couples Session Inquiry')} class="btn btn-primary" style="font-size:0.9rem;padding:0.6rem 1.4rem;">
+                  Schedule
+                </a>
+              </div>
+
+              <div class="info-cards">
+                <div class="info-card">
+                  <h3>💳 Payment Methods</h3>
+                  <div class="pay-badges">
+                    ${['Visa','Mastercard','Amex','Discover'].map(p => html`
+                      <span class="pay-badge" key=${p}>${p}</span>
+                    `)}
+                  </div>
+                </div>
+                <div class="info-card">
+                  <h3>🏥 Insurance Accepted</h3>
+                  <ul>
+                    ${['Aetna','Cigna & Evernorth','Harvard Pilgrim','Point32 Healthcare','Out of Network'].map(i => html`
+                      <li key=${i}>${i}</li>
+                    `)}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    /* ── CONTACT ── */
+    function Contact() {
+      return html`
+        <section class="contact" id="contact">
+          <div class="container">
+            <div class="text-center reveal">
+              <div class="title-bar" style="margin:0 auto 1rem;"></div>
+              <h2 class="section-title">Get in Touch</h2>
+              <p class="section-sub">Ready to take the first step? I'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-grid reveal">
+              <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <div class="contact-label">Email</div>
+                  <div class="contact-value">
+                    <a href=${mailTo()}>${EMAIL}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <div class="contact-label">Phone</div>
+                  <div class="contact-value">
+                    <a href="tel:+16035527053">603-552-7053</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-cta reveal d2">
+              <p>Taking the first step toward healing takes courage.<br/>I'm here to support you every step of the way.</p>
+              <a href=${mailTo('General Inquiry')} class="btn btn-primary">
+                Send a Message
+              </a>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    /* ── FOOTER ── */
+    function Footer() {
+      return html`
+        <footer class="footer">
+          <div class="container">
+            <img src="assets/logo-name-motto-horizontal.png"
+                 alt="Pacific Counseling PLLC"
+                 class="footer-logo" />
+            <p class="footer-tag">Navigating Life, One Wave at a Time</p>
+            <p class="footer-copy">
+              © ${new Date().getFullYear()} Pacific Counseling PLLC · All rights reserved
+            </p>
+            <div class="footer-divider"></div>
+            <p class="footer-legal">
+              By using this website, you agree to our <a href="terms.html">Terms & Privacy Policy</a>.
+              This site is for informational purposes only and does not establish a therapeutic relationship.
+              Email is not secure for confidential communication.
+              For emergencies call <a href="tel:911">911</a> or <a href="tel:988">988</a>.
+            </p>
+          </div>
+        </footer>
+      `;
+    }
+
+    /* ── APP ── */
+    function App() {
+      const [scrolled, setScrolled] = useState(false);
+
+      useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 60);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+      }, []);
+
+      useReveal();
+
+      return html`
+        <div>
+          <${Nav} scrolled=${scrolled} />
+          <${Hero} />
+          <${About} />
+          <${Specialties} />
+          <${Approach} />
+          <${Fees} />
+          <${Contact} />
+          <${Footer} />
+        </div>
+      `;
+    }
+
+    render(html`<${App} />`, document.getElementById('app'));
+  </script>
+</body>
+</html>
