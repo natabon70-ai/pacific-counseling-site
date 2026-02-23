@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions, Privacy Policy & Disclaimer | Pacific Counseling PLLC</title>
+  <meta name="description" content="Terms and Conditions, Privacy Policy, and Disclaimer for Pacific Counseling PLLC, a licensed mental health counseling practice in New Hampshire." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── TERMS PAGE STYLES ── */
+    body { background: var(--cream); }
+
+    /* Top nav bar */
+    .terms-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(254,249,244,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(10,61,92,0.10);
+      padding: 0.7rem 0;
+    }
+    .terms-nav .container {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .terms-nav-logo img { height: 38px; object-fit: contain; }
+    .terms-back {
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--teal-primary);
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .terms-back:hover { color: var(--coral); }
+
+    /* Hero banner */
+    .terms-hero {
+      background: linear-gradient(-45deg, var(--teal-deep), var(--teal-primary), #1a7ab5, var(--teal-deep));
+      background-size: 400% 400%;
+      animation: gradientFlow 22s ease infinite;
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .terms-hero h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .terms-hero-meta {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+    }
+    .terms-hero-meta strong { color: rgba(255,255,255,0.9); }
+
+    /* Crisis banner */
+    .crisis-banner {
+      background: linear-gradient(135deg, #c0392b, #e74c3c);
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .crisis-banner p {
+      font-size: 0.95rem; font-weight: 600; margin: 0;
+    }
+    .crisis-banner a {
+      color: white; font-weight: 800; text-decoration: underline;
+    }
+
+    /* Main content */
+    .terms-main { padding: 4rem 0 5rem; }
+
+    .terms-content {
+      max-width: 780px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 0;
+    }
+
+    /* Table of contents */
+    .terms-toc {
+      background: var(--teal-pale);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .terms-toc h2 {
+      font-size: 1.1rem; color: var(--teal-primary);
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .terms-toc ol {
+      padding-left: 1.2rem;
+      display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .terms-toc li a {
+      font-size: 0.92rem; color: var(--teal-primary); font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .terms-toc li a:hover { color: var(--coral); text-decoration: underline; }
+
+    /* Sections */
+    .terms-section {
+      padding: 2.2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .terms-section:last-child { border-bottom: none; }
+
+    .terms-section h2 {
+      font-size: 1.25rem; color: var(--teal-primary);
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+      display: flex; align-items: baseline; gap: 0.5rem;
+    }
+    .terms-section h2 .section-num {
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--coral);
+      background: var(--coral-pale);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Nunito', sans-serif;
+      flex-shrink: 0;
+    }
+    .terms-section h3 {
+      font-size: 1rem; color: var(--text-dark);
+      margin: 1.2rem 0 0.5rem;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+    .terms-section p {
+      font-size: 0.97rem; line-height: 1.8;
+      color: var(--text-mid); margin-bottom: 0.75rem;
+    }
+    .terms-section p:last-child { margin-bottom: 0; }
+
+    .terms-section ul, .terms-section ol {
+      padding-left: 0; list-style: none;
+      display: flex; flex-direction: column; gap: 0.4rem;
+      margin: 0.6rem 0 0.75rem;
+    }
+    .terms-section ul li, .terms-section ol li {
+      font-size: 0.97rem; color: var(--text-mid);
+      line-height: 1.7;
+      display: flex; align-items: flex-start; gap: 0.7rem;
+    }
+    .terms-section ul li::before {
+      content: '';
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--teal-light);
+      margin-top: 0.55rem; flex-shrink: 0;
+    }
+    .terms-section ol { counter-reset: terms-counter; }
+    .terms-section ol li { counter-increment: terms-counter; }
+    .terms-section ol li::before {
+      content: counter(terms-counter);
+      min-width: 22px; height: 22px;
+      background: var(--teal-pale);
+      color: var(--teal-primary);
+      border-radius: 50%;
+      font-size: 0.78rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 0.25rem;
+    }
+
+    /* Emergency callout */
+    .emergency-callout {
+      background: #fff8f7;
+      border: 1.5px solid rgba(224,112,80,0.3);
+      border-left: 5px solid var(--coral);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+    }
+    .emergency-callout p {
+      font-size: 0.95rem; color: #8b2200; margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .emergency-callout ul { margin: 0.5rem 0 0; }
+    .emergency-callout ul li::before { background: var(--coral) !important; }
+    .emergency-callout ul li { color: #8b2200 !important; font-weight: 600; }
+    .emergency-callout a { color: #c0392b; font-weight: 800; }
+
+    /* Footer on terms page */
+    .terms-footer-note {
+      font-size: 0.82rem; color: rgba(255,255,255,0.38);
+      margin-top: 0.8rem; line-height: 1.65;
+    }
+    .terms-footer-note a { color: rgba(255,255,255,0.55); text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .terms-main { padding: 2.5rem 0 4rem; }
+      .terms-section h2 { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <header class="terms-nav">
+    <div class="container">
+      <a href="index.html" class="terms-nav-logo">
+        <img src="assets/logo-name-motto-horizontal.png" alt="Pacific Counseling PLLC" />
+      </a>
+      <a href="index.html" class="terms-back">← Back to Home</a>
+    </div>
+  </header>
+
+  <!-- Crisis banner -->
+  <div class="crisis-banner">
+    <p>
+      If you are in crisis or need immediate help:
+      call <a href="tel:911">911</a> &nbsp;·&nbsp;
+      call or text <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline) &nbsp;·&nbsp;
+      go to your nearest emergency room
+    </p>
+  </div>
+
+  <!-- Hero -->
+  <div class="terms-hero">
+    <div class="container">
+      <h1>Terms &amp; Conditions, Privacy Policy &amp; Disclaimer</h1>
+      <p class="terms-hero-meta">
+        <strong>Effective Date:</strong> February 22, 2026<br />
+        <strong>Practice:</strong> Pacific Counseling PLLC<br />
+        Licensed Mental Health Counselor (LMHC), State of New Hampshire
+      </p>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main class="terms-main">
+    <div class="container">
+      <div class="terms-content">
+
+        <!-- Table of Contents -->
+        <div class="terms-toc">
+          <h2>Contents</h2>
+          <ol>
+            <li><a href="#acceptance">Acceptance of Terms</a></li>
+            <li><a href="#purpose">Website Purpose</a></li>
+            <li><a href="#no-relationship">No Therapeutic Relationship</a></li>
+            <li><a href="#licensure">Geographic &amp; Licensure Limitation</a></li>
+            <li><a href="#emergency">Emergency &amp; Crisis Disclaimer</a></li>
+            <li><a href="#email">Email &amp; Electronic Communication Notice</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#ip">Intellectual Property</a></li>
+            <li><a href="#no-guarantees">No Guarantees</a></li>
+            <li><a href="#links">External Links</a></li>
+            <li><a href="#modifications">Modifications</a></li>
+          </ol>
+        </div>
+
+        <!-- 1. Acceptance -->
+        <div class="terms-section" id="acceptance">
+          <h2><span class="section-num">1</span> Acceptance of Terms</h2>
+          <p>By accessing, browsing, or using this website, you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions, Privacy Policy, and Disclaimer.</p>
+          <p>If you do not agree with these terms, please do not use this website.</p>
+        </div>
+
+        <!-- 2. Website Purpose -->
+        <div class="terms-section" id="purpose">
+          <h2><span class="section-num">2</span> Website Purpose</h2>
+          <p>This website is provided for informational purposes only. The content on this site is not medical, psychological, or legal advice and should not replace consultation with a qualified professional.</p>
+        </div>
+
+        <!-- 3. No Therapeutic Relationship -->
+        <div class="terms-section" id="no-relationship">
+          <h2><span class="section-num">3</span> No Therapeutic Relationship</h2>
+          <p>Use of this website, including submitting a contact form or sending an email, does not establish a therapist-client relationship.</p>
+          <p>A therapeutic relationship is established only after all of the following:</p>
+          <ol>
+            <li>Completion of required intake documentation</li>
+            <li>Signed informed consent</li>
+            <li>An initial session has occurred</li>
+            <li>Both parties mutually agree to engage in services</li>
+          </ol>
+        </div>
+
+        <!-- 4. Licensure -->
+        <div class="terms-section" id="licensure">
+          <h2><span class="section-num">4</span> Geographic &amp; Licensure Limitation</h2>
+          <p>Clinical services are provided only to individuals physically located in the State of New Hampshire at the time of service, unless otherwise permitted by law.</p>
+        </div>
+
+        <!-- 5. Emergency -->
+        <div class="terms-section" id="emergency">
+          <h2><span class="section-num">5</span> Emergency &amp; Crisis Disclaimer</h2>
+          <p>This website and associated email accounts are <strong>not monitored</strong> for emergency or crisis communications.</p>
+          <div class="emergency-callout">
+            <p>If you are experiencing an emergency, please:</p>
+            <ul>
+              <li>Call <a href="tel:911">911</a></li>
+              <li>Call or text <a href="tel:988">988</a> — Suicide &amp; Crisis Lifeline</li>
+              <li>Go to your nearest emergency room</li>
+            </ul>
+          </div>
+          <p>Do not use this website or email for urgent mental health concerns.</p>
+        </div>
+
+        <!-- 6. Email Communication -->
+        <div class="terms-section" id="email">
+          <h2><span class="section-num">6</span> Email &amp; Electronic Communication Notice</h2>
+          <p>Email and website contact forms are not guaranteed to be secure or HIPAA-compliant methods of communication.</p>
+          <p>By choosing to communicate via email or website form, you acknowledge and accept the potential risks to confidentiality associated with electronic communication.</p>
+          <p>Sensitive or urgent clinical information should not be transmitted via standard email.</p>
+        </div>
+
+        <!-- 7. Privacy Policy -->
+        <div class="terms-section" id="privacy">
+          <h2><span class="section-num">7</span> Privacy Policy</h2>
+
+          <h3>Information Collected</h3>
+          <p>This website may collect:</p>
+          <ul>
+            <li>Email address</li>
+            <li>Information voluntarily submitted through email</li>
+            <li>Basic website analytics data (such as browser type and IP address)</li>
+          </ul>
+          <p>Information is collected only when voluntarily provided or automatically through standard website analytics tools.</p>
+
+          <h3>Use of Information</h3>
+          <p>Information may be used to:</p>
+          <ul>
+            <li>Respond to inquiries</li>
+            <li>Schedule consultations</li>
+            <li>Provide requested information</li>
+            <li>Improve website functionality</li>
+          </ul>
+          <p>Personal information will not be sold, rented, or shared for marketing purposes.</p>
+
+          <h3>Confidentiality &amp; HIPAA</h3>
+          <p>Information submitted through this website prior to establishing a therapeutic relationship is not protected under HIPAA.</p>
+          <p>Once a therapeutic relationship is formally established, protected health information is handled in accordance with HIPAA and applicable state laws.</p>
+        </div>
+
+        <!-- 8. Intellectual Property -->
+        <div class="terms-section" id="ip">
+          <h2><span class="section-num">8</span> Intellectual Property</h2>
+          <p>All content on this website, including text, graphics, branding, and design elements, is the property of Pacific Counseling PLLC unless otherwise stated and may not be reproduced without written permission.</p>
+        </div>
+
+        <!-- 9. No Guarantees -->
+        <div class="terms-section" id="no-guarantees">
+          <h2><span class="section-num">9</span> No Guarantees</h2>
+          <p>Therapy is a collaborative and individualized process. No guarantees are made regarding specific outcomes or results.</p>
+        </div>
+
+        <!-- 10. External Links -->
+        <div class="terms-section" id="links">
+          <h2><span class="section-num">10</span> External Links</h2>
+          <p>This website may contain links to third-party websites. This practice is not responsible for the content, accuracy, or privacy practices of those external sites.</p>
+        </div>
+
+        <!-- 11. Modifications -->
+        <div class="terms-section" id="modifications">
+          <h2><span class="section-num">11</span> Modifications</h2>
+          <p>These Terms &amp; Policies may be updated at any time without prior notice. Continued use of this website constitutes acceptance of any modifications.</p>
+        </div>
+
+      </div><!-- /terms-content -->
+    </div><!-- /container -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <img src="assets/logo-name-motto-horizontal.png"
+           alt="Pacific Counseling PLLC"
+           class="footer-logo" />
+      <p class="footer-tag">Navigating Life, One Wave at a Time</p>
+      <p class="footer-copy">© <script>document.write(new Date().getFullYear())</script> Pacific Counseling PLLC · All rights reserved</p>
+      <p class="terms-footer-note">
+        <a href="index.html">← Back to Home</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
